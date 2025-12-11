@@ -42,3 +42,5 @@ UserSchema.pre('save', async function () {
     const salt = await genSalt(10);
     this.password = await hash(this.password, salt);
 });
+
+export default model('User', UserSchema);
